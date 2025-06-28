@@ -1,0 +1,12 @@
+<h2>Dashboard</h2>
+        <form method="post">
+            <input type="text" name="note" placeholder="Sleep note" required>
+            <input type="date" name="date" required>
+            <input type="submit" value="Add Note">
+        </form>
+        <ul>
+            {% for note in notes %}
+            <li>{{ note.date }}: {{ note.content }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/export/pdf">Export PDF</a> | <a href="/export/excel">Export Excel</a> | <a href="/logout">Logout</a>
